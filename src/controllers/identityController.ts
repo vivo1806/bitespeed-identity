@@ -6,17 +6,21 @@ export async function identifyHandler(
   res: Response,
 ): Promise<void> {
   try {
-    const { email, phoneNumber } = req.body as {
-      email?: string;
-      phoneNumber?: string;
-    };
+    const body = req.body as { email?: string; phoneNumber?: string };
+
+    const email =
+      typeof body.email === "string"
+        ? body.email.trim() || undefined
+        : undefined;
+    const phoneNumber =
+      typeof body.phoneNumber === "string"
+        ? body.phoneNumber.trim() || undefined
+        : undefined;
 
     if (!email && !phoneNumber) {
-      res
-        .status(400)
-        .json({
-          error: "At least one of email or phoneNumber must be provided",
-        });
+      res.status(400).json({
+        error: "At least one of email or phoneNumber must be provided",
+      });
       return;
     }
 
