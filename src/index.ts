@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import identityRouter from "./routes/identityRoute";
 dotenv.config();
 
 import express, { Request, Response } from "express";
@@ -11,7 +12,7 @@ app.use(express.json());
 app.get("/", (_req: Request, res: Response) => {
   res.json({ status: "ok" });
 });
-
+app.use("/identify", identityRouter);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
