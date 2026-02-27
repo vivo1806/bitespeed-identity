@@ -10,7 +10,7 @@ A REST API service that reconciles customer identities across multiple purchases
 - **TypeScript** — Type safety
 - **Express** — Web framework
 - **Prisma** — ORM
-- **SQLite** — Database
+- **Postgresql** — Database
 
 ---
 
@@ -41,7 +41,7 @@ npm start
 | Variable | Default | Description |
 |---|---|---|
 | `PORT` | `3000` | Server port |
-| `DATABASE_URL` | `file:./dev.db` | SQLite database path |
+| `DATABASE_URL` | `file:./dev.db` | postgresql database path |
 
 ---
 
