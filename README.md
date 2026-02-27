@@ -57,7 +57,7 @@ npm start
 
 **POST /identify**
 
-Reconciles a contact by email and/or phone number. At least one field is required.
+Reconciles a contact by email or phone number. At least one field is required.
 
 **Request body:**
 ```json
